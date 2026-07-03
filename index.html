@@ -416,6 +416,8 @@
     .step { position: relative; padding-top: 1.4rem; border-top: 2px solid var(--forest-800); }
     .step .num { font-family: var(--font-serif); font-size: 0.95rem; color: var(--clay-deep); font-weight: 600; letter-spacing: 0.05em; }
     .step h3 { font-family: var(--font-sans); font-weight: 600; font-size: 1.16rem; letter-spacing: -0.01em; margin-top: 0.7rem; color: var(--ink); }
+    .step h3 .step-link { color: var(--clay-deep); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1.5px; transition: color 0.25s; }
+    .step h3 .step-link:hover { color: var(--clay-press); }
     .step p { margin-top: 0.55rem; font-size: 0.96rem; color: var(--ink-soft); }
     .step .meta { margin-top: 0.8rem; font-size: 0.82rem; color: var(--clay-deep); font-weight: 600; letter-spacing: 0.02em; }
 
@@ -427,6 +429,7 @@
     .voices-head h2 { font-size: clamp(2rem, 1.4rem + 2.4vw, 3.1rem); margin-top: 0.8rem; }
     .voices-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: clamp(1.2rem, 2.5vw, 1.8rem); align-items: start; }
     @media (max-width: 900px) { .voices-grid { grid-template-columns: 1fr; max-width: 560px; margin-inline: auto; } }
+    .voices-cta { text-align: center; margin-top: clamp(2.5rem, 5vw, 3.5rem); }
     .voice {
       background: var(--paper); border-radius: var(--radius); padding: clamp(1.5rem, 2.5vw, 2rem);
       box-shadow: 0 20px 50px -36px oklch(0.19 0.028 165 / 0.6);
@@ -647,7 +650,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <span class="header-phone-label">(352) 336-1433</span>
         </a>
-        <a class="btn" href="#consult">Get your free consult</a>
+        <a class="btn" href="#consult">Get your free consultation</a>
       </div>
     </div>
   </header>
@@ -664,7 +667,7 @@
             <h1 class="anim" style="--d:90ms">Relief from bowel obstructions, <em>without surgery.</em></h1>
             <p class="hero-sub anim" style="--d:200ms">Clear Passage® is a hands-on therapy shown in peer-reviewed studies to reduce the internal adhesions behind recurring small-bowel obstructions — so you can stop living between ER visits.</p>
             <div class="hero-cta anim" style="--d:310ms">
-              <a class="btn" href="#consult">Get your free consult <span class="arrow" aria-hidden="true">→</span></a>
+              <a class="btn" href="#consult">Get your free consultation <span class="arrow" aria-hidden="true">→</span></a>
               <a class="call" href="tel:+13523361433">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 (352) 336-1433 <span>· speak with a therapist</span>
@@ -785,6 +788,7 @@
               <span>No anesthesia</span>
               <span>Repeatable outcomes</span>
             </div>
+            <a class="btn" href="#consult" style="margin-top:2rem">Get your free consultation <span class="arrow" aria-hidden="true">→</span></a>
           </div>
         </div>
       </div>
@@ -801,7 +805,7 @@
           <p class="lede" style="max-width:30ch">Most patients complete 20 hours of therapy in two-hour sessions — often around four hours a day, Monday through Friday.</p>
         </div>
         <div class="steps">
-          <div class="step reveal"><span class="num">Step 01</span><h3>Free consult</h3><p>Tell us your history. We’ll talk through whether the therapy is a fit — no cost, no pressure.</p><span class="meta">15–30 minutes</span></div>
+          <div class="step reveal"><span class="num">Step 01</span><h3><a class="step-link" href="#consult">Free consult</a></h3><p>Tell us your history. We’ll talk through whether the therapy is a fit — no cost, no pressure.</p><span class="meta">15–30 minutes</span></div>
           <div class="step reveal" style="--d:90ms"><span class="num">Step 02</span><h3>Medical review</h3><p>You complete a detailed history. Our team screens candidacy, usually within three business days.</p><span class="meta">~3 business days</span></div>
           <div class="step reveal" style="--d:180ms"><span class="num">Step 03</span><h3>Hands-on therapy</h3><p>Twenty hours of individualized manual treatment, tailored to where your adhesions have formed.</p><span class="meta">Typically one week</span></div>
           <div class="step reveal" style="--d:270ms"><span class="num">Step 04</span><h3>Prevention plan</h3><p>You leave with education and self-care to help keep the passage open long after you go home.</p><span class="meta">Ongoing</span></div>
@@ -841,6 +845,7 @@
             <figcaption><span class="av">L</span><span><span class="who">Leeah</span><span class="role">Clear Passage® patient</span></span></figcaption>
           </figure>
         </div>
+        <div class="voices-cta reveal"><a class="btn" href="#consult">Get your free consultation <span class="arrow" aria-hidden="true">→</span></a></div>
       </div>
     </section>
 
@@ -900,7 +905,7 @@
             <span class="kicker">Good questions</span>
             <h2 style="font-size:clamp(1.9rem,1.3rem + 2.2vw,2.8rem);margin-top:0.9rem">Answers before you call.</h2>
             <p class="lede" style="margin-top:1.2rem">Still unsure? A free consult is the best way to get specific answers for your history.</p>
-            <a class="btn" style="margin-top:1.6rem" href="#consult">Get your free consult <span class="arrow" aria-hidden="true">→</span></a>
+            <a class="btn" style="margin-top:1.6rem" href="#consult">Get your free consultation <span class="arrow" aria-hidden="true">→</span></a>
           </div>
           <div class="faq-list reveal" style="--d:100ms">
             <details class="qa" open>
@@ -938,7 +943,7 @@
           <div class="final-inner reveal">
             <span class="kicker on-dark">Your next step</span>
             <h2>Picture a season <em>without</em> the next obstruction.</h2>
-            <p>Get your free consult. We’ll listen to your history, answer your questions honestly, and tell you whether Clear Passage® is a fit — no cost, no pressure.</p>
+            <p>Get your free consultation. We’ll listen to your history, answer your questions honestly, and tell you whether Clear Passage® is a fit — no cost, no pressure.</p>
             <div class="final-assure">
               <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> No cost, no obligation</span>
               <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Candidacy reviewed in ~3 business days</span>
@@ -956,7 +961,7 @@
           <div class="form-card reveal" id="consult" style="--d:120ms">
             <div class="form-card-head">
               <div>
-                <h3>Get your free consult</h3>
+                <h3>Get your free consultation</h3>
                 <span class="sub">We’ll follow up within 3 business days</span>
               </div>
               <span class="secure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="4" y="10.5" width="16" height="10" rx="2.2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5" stroke-linecap="round"/></svg> Private &amp; secure</span>
@@ -1010,7 +1015,7 @@
                   <input id="cf-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(352) 000-0000" />
                 </div>
                 <div class="cf-contact-error" id="cfContactError">Please add an email or phone number so we can reach you.</div>
-                <button class="btn cf-submit" type="submit"><span class="cf-label">Get my free consult</span> <span class="arrow" aria-hidden="true">→</span></button>
+                <button class="btn cf-submit" type="submit"><span class="cf-label">Get your free consultation</span> <span class="arrow" aria-hidden="true">→</span></button>
                 <div class="cf-alert" id="cfAlert" role="alert"></div>
                 <p class="cf-fine">No cost, no obligation. We’ll only use your details to follow up about your consult.</p>
               </form>
@@ -1036,7 +1041,7 @@
         <div class="footer-contact">
           <a href="tel:+13523361433">(352) 336-1433</a>
           <span>Free consult · Mon–Fri, 8am–5pm</span>
-          <a href="#consult" style="font-size:0.9rem;font-family:var(--font-sans);text-decoration:underline;text-underline-offset:3px;margin-top:0.3rem">Get your free consult →</a>
+          <a href="#consult" style="font-size:0.9rem;font-family:var(--font-sans);text-decoration:underline;text-underline-offset:3px;margin-top:0.3rem">Get your free consultation →</a>
         </div>
       </div>
       <div class="footer-bottom">
@@ -1160,7 +1165,7 @@
 
         var setBusy = function (busy) {
           submitBtn.setAttribute('aria-busy', busy ? 'true' : 'false');
-          btnLabel.textContent = busy ? 'Sending…' : 'Get my free consult';
+          btnLabel.textContent = busy ? 'Sending…' : 'Get your free consultation';
         };
 
         form.addEventListener('submit', function (e) {
