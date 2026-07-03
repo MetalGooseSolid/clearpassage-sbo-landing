@@ -624,6 +624,10 @@
       transition-delay: var(--d, 0ms);
     }
 
+    /* Content photos fade in gracefully when decoded, so they never pop in. */
+    .js-motion .photo-fade { opacity: 0; transition: opacity 0.9s var(--ease-out); }
+    .js-motion .photo-fade.img-in { opacity: 1; }
+
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
@@ -699,7 +703,7 @@
       <div class="wrap">
         <div class="empathy-grid">
           <div class="empathy-media reveal">
-            <img src="https://images.unsplash.com/photo-1658279366796-e0c28623cd27?auto=format&fit=crop&w=900&q=75" alt="A woman resting quietly by a window, living carefully around a recurring condition" width="900" height="1080" loading="lazy" />
+            <img class="photo-fade" src="https://images.unsplash.com/photo-1658279366796-e0c28623cd27?auto=format&fit=crop&w=900&q=75" alt="A woman resting quietly by a window, living carefully around a recurring condition" width="900" height="1080" loading="lazy" />
           </div>
           <div class="empathy-copy reveal" style="--d:100ms">
             <span class="kicker">If this is your life</span>
@@ -747,7 +751,7 @@
 
           <div class="approach-media reveal" style="--d:120ms">
             <div class="frame">
-              <img src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?auto=format&fit=crop&w=900&q=75" alt="Therapist applying gentle, sustained pressure during hands-on manual therapy" width="900" height="1125" loading="lazy" />
+              <img class="photo-fade" src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?auto=format&fit=crop&w=900&q=75" alt="Therapist applying gentle, sustained pressure during hands-on manual therapy" width="900" height="1125" loading="lazy" />
             </div>
             <figure class="quote-card">
               <p>“It feels like we’re pulling out the run in a three-dimensional sweater.”</p>
@@ -856,7 +860,7 @@
           </div>
           <div class="makers-media reveal" style="--d:120ms">
             <div class="frame">
-              <img src="belinda-larry-wurn.jpg" alt="Belinda and Larry Wurn, developers of Clear Passage® therapy" width="1100" height="1100" loading="lazy" />
+              <img class="photo-fade" src="belinda-larry-wurn.jpg" alt="Belinda and Larry Wurn, developers of Clear Passage® therapy" width="1100" height="1100" loading="lazy" />
             </div>
           </div>
         </div>
@@ -1088,6 +1092,14 @@
       } else {
         document.querySelectorAll('.reveal, .proof').forEach(function (el) { el.classList.add('in-view'); });
       }
+
+      // Content photos: fade each in once it has actually decoded (not on scroll),
+      // so a lazy-loaded image never snaps in after its container has appeared.
+      document.querySelectorAll('.photo-fade').forEach(function (img) {
+        var show = function () { img.classList.add('img-in'); };
+        if (img.complete && img.naturalWidth) requestAnimationFrame(show);
+        else { img.addEventListener('load', show); img.addEventListener('error', show); }
+      });
 
       // Native consult form: validate, submit as JSON to data-endpoint, show states.
       // See the DEVELOPER / IntakeQ INTEGRATION comment in the markup for wiring.
